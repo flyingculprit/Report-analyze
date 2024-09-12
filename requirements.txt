@@ -1,4 +1,4 @@
-
+flask
 gradio
 pytesseract
 pillow 
