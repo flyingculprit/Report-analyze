@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image OCR Extractor</title>
+    <title>Image OCR Extractor with Generative AI</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,18 +21,26 @@
             margin-top: 20px;
             max-width: 100%;
         }
-        .extracted-text {
+         .extracted-text, .generated-output {
             margin-top: 20px;
             padding: 10px;
             background-color: #f2f2f2;
             border: 1px solid #ddd;
+            text-align: left;
+            white-space: pre-wrap; /* Ensure text wraps correctly */
+            word-wrap: break-word; /* Handle long words or URLs */
+            overflow: auto; /* Add scrollbars if content exceeds box height */
+            max-height: 300px; /* Limit the height to prevent overflow */
+        }
+        pre {
+            margin: 0; /* Ensure no extra margin in the preformatted text */
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Image OCR Text Extractor</h1>
+    <h1>Image OCR Text Extractor with Generative AI</h1>
     <form action="/" method="post" enctype="multipart/form-data">
         <input type="file" name="image" accept="image/*" required>
         <br>
@@ -50,6 +58,13 @@
     <div class="extracted-text">
         <h2>Extracted Text:</h2>
         <pre>{{ extracted_text }}</pre>
+    </div>
+    {% endif %}
+
+    {% if generated_output %}
+    <div class="generated-output">
+        <h2>Generated AI Output:</h2>
+        <pre>{{ generated_output }}</pre>
     </div>
     {% endif %}
 </div>
