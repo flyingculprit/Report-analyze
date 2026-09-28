@@ -21,7 +21,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 
 
 # Configure Google Generative AI API
-genai.configure(api_key='AIzaSyAEcGv1nDRPSw678oITOLTGwJRYxh3Aj3w')
+genai.configure(api_key='')
 
 
 @app.route('/', methods=['GET', 'POST'])
